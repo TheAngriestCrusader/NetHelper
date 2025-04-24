@@ -5,7 +5,7 @@ export default function createServer(host: string, port: number) {
         logger: true
     });
 
-    fastify.get('/time', async (request, reply) => {
+    fastify.get('/time', async (request: any, reply: any) => {
         console.log(`Received request for time from ${request.ip}`);
         reply.send({ time: new Date().toISOString() });
     });
@@ -13,7 +13,7 @@ export default function createServer(host: string, port: number) {
     fastify.listen({
         host: host,
         port: port
-    }, (err, address) => {
+    }, (err: any, address: any) => {
 
         if (err) {
             fastify.log.error(err);
