@@ -1,6 +1,12 @@
 import Fastify, { FastifyInstance } from 'fastify';
 
 export default function createServer(host: string, port: number) {
+    /**
+     * Create a Fastify server instance on the specified host and port.
+     * 
+     * @param {string} host - Host address for the server.
+     * @param {number} port - Port that the server listens on.
+     */
     const fastify = Fastify({
         logger: true
     });
